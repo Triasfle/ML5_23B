@@ -1,0 +1,103 @@
+|--- alcohol <= 10.02
+|   |--- volatile acidity <= 0.24
+|   |   |--- fixed acidity <= 9.05
+|   |   |   |--- citric acid <= 0.24
+|   |   |   |   |--- free sulfur dioxide <= 43.00
+|   |   |   |   |   |--- free sulfur dioxide <= 25.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- free sulfur dioxide >  25.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- free sulfur dioxide >  43.00
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- citric acid >  0.24
+|   |   |   |   |--- citric acid <= 0.33
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- citric acid >  0.33
+|   |   |   |   |   |--- sulphates <= 0.48
+|   |   |   |   |   |   |--- pH <= 3.02
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- pH >  3.02
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- sulphates >  0.48
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- fixed acidity >  9.05
+|   |   |   |--- class: 0
+|   |--- volatile acidity >  0.24
+|   |   |--- volatile acidity <= 0.59
+|   |   |   |--- alcohol <= 9.85
+|   |   |   |   |--- volatile acidity <= 0.30
+|   |   |   |   |   |--- citric acid <= 0.24
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- citric acid >  0.24
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- volatile acidity >  0.30
+|   |   |   |   |   |--- total sulfur dioxide <= 59.00
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- total sulfur dioxide >  59.00
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- alcohol >  9.85
+|   |   |   |   |--- density <= 0.99
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- density >  0.99
+|   |   |   |   |   |--- class: 1
+|   |   |--- volatile acidity >  0.59
+|   |   |   |--- class: 0
+|--- alcohol >  10.02
+|   |--- alcohol <= 11.15
+|   |   |--- volatile acidity <= 0.26
+|   |   |   |--- free sulfur dioxide <= 13.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- free sulfur dioxide >  13.50
+|   |   |   |   |--- class: 1
+|   |   |--- volatile acidity >  0.26
+|   |   |   |--- sulphates <= 0.63
+|   |   |   |   |--- free sulfur dioxide <= 15.50
+|   |   |   |   |   |--- sulphates <= 0.55
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- sulphates >  0.55
+|   |   |   |   |   |   |--- residual sugar <= 1.75
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- residual sugar >  1.75
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- free sulfur dioxide >  15.50
+|   |   |   |   |   |--- density <= 1.00
+|   |   |   |   |   |   |--- citric acid <= 0.25
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- citric acid >  0.25
+|   |   |   |   |   |   |   |--- free sulfur dioxide <= 37.50
+|   |   |   |   |   |   |   |   |--- total sulfur dioxide <= 141.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- total sulfur dioxide >  141.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- free sulfur dioxide >  37.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- density >  1.00
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- sulphates >  0.63
+|   |   |   |   |--- total sulfur dioxide <= 71.50
+|   |   |   |   |   |--- volatile acidity <= 0.64
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- volatile acidity >  0.64
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- total sulfur dioxide >  71.50
+|   |   |   |   |   |--- class: 1
+|   |--- alcohol >  11.15
+|   |   |--- free sulfur dioxide <= 10.50
+|   |   |   |--- chlorides <= 0.06
+|   |   |   |   |--- alcohol <= 11.75
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- alcohol >  11.75
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- chlorides >  0.06
+|   |   |   |   |--- class: 1
+|   |   |--- free sulfur dioxide >  10.50
+|   |   |   |--- volatile acidity <= 0.87
+|   |   |   |   |--- alcohol <= 12.03
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- alcohol >  12.03
+|   |   |   |   |   |--- chlorides <= 0.10
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- chlorides >  0.10
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- volatile acidity >  0.87
+|   |   |   |   |--- class: 0

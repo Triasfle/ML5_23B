@@ -1,0 +1,9 @@
+alcohol,volatile acidity,quality,label
+9.3,0.15,5,buruk (0)
+9.3,0.28,6,baik (1)
+9.73333333333333,0.22,5,buruk (0)
+10.0,0.2,5,buruk (0)
+10.3,0.19,6,baik (1)
+10.5,0.22,6,baik (1)
+10.5,0.32,4,buruk (0)
+12.7,0.36,6,baik (1)

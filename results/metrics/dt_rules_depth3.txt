@@ -1,0 +1,40 @@
+|--- alcohol <= 10.02
+|   |--- volatile acidity <= 0.24
+|   |   |--- fixed acidity <= 9.05
+|   |   |   |--- citric acid <= 0.24
+|   |   |   |   |--- truncated branch of depth 3
+|   |   |   |--- citric acid >  0.24
+|   |   |   |   |--- truncated branch of depth 4
+|   |   |--- fixed acidity >  9.05
+|   |   |   |--- class: 0
+|   |--- volatile acidity >  0.24
+|   |   |--- volatile acidity <= 0.59
+|   |   |   |--- alcohol <= 9.85
+|   |   |   |   |--- truncated branch of depth 3
+|   |   |   |--- alcohol >  9.85
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |--- volatile acidity >  0.59
+|   |   |   |--- class: 0
+|--- alcohol >  10.02
+|   |--- alcohol <= 11.15
+|   |   |--- volatile acidity <= 0.26
+|   |   |   |--- free sulfur dioxide <= 13.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- free sulfur dioxide >  13.50
+|   |   |   |   |--- class: 1
+|   |   |--- volatile acidity >  0.26
+|   |   |   |--- sulphates <= 0.63
+|   |   |   |   |--- truncated branch of depth 6
+|   |   |   |--- sulphates >  0.63
+|   |   |   |   |--- truncated branch of depth 3
+|   |--- alcohol >  11.15
+|   |   |--- free sulfur dioxide <= 10.50
+|   |   |   |--- chlorides <= 0.06
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- chlorides >  0.06
+|   |   |   |   |--- class: 1
+|   |   |--- free sulfur dioxide >  10.50
+|   |   |   |--- volatile acidity <= 0.87
+|   |   |   |   |--- truncated branch of depth 3
+|   |   |   |--- volatile acidity >  0.87
+|   |   |   |   |--- class: 0
