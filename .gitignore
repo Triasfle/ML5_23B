@@ -4,6 +4,9 @@ data/raw/imagenette2-160.tgz
 data/processed/
 imagenette2-160.tgz
 wine+quality.zip
+ML_DescisionTree.pdf
+RENCANA_KERJA.md
+reports/
 
 # Python
 __pycache__/
