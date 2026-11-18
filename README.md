@@ -15,35 +15,6 @@ Repositori ini saat ini memuat pengerjaan lengkap bagian **Decision Tree** dalam
 
 ---
 
-## Struktur repositori
-
-```text
-.
-├── data/
-│   └── raw/
-│       ├── winequality-red.csv
-│       ├── winequality-white.csv
-│       └── winequality.names
-├── src/
-│   └── supervised/
-│       ├── simulasi_manual_dt.py     # simulasi Gini/IG (klasifikasi)
-│       ├── decision_tree.py          # pipeline klasifikasi + visualisasi
-│       ├── simulasi_manual_dtr.py    # simulasi MSE/variance reduction (regresi)
-│       └── decision_tree_regresi.py  # pipeline regresi + visualisasi
-├── results/
-│   ├── figures/                      # 19 gambar hasil eksperimen
-│   ├── metrics/                      # metrik, aturan pohon, hasil GridSearch
-│   ├── models/                       # model terbaik (.joblib)
-│   └── data/                         # sampel 8 baris untuk simulasi
-├── reports/
-│   ├── bagian3_simulasi_manual.md
-│   ├── bagian4_implementasi_kode.md
-│   ├── bagian5_visualisasi_analisis.md
-│   └── bagian_dt_regresi.md
-├── requirements.txt
-└── README.md
-```
-
 ---
 
 ## Dataset
@@ -61,21 +32,6 @@ Dataset gabungan red dan white dari UCI Machine Learning Repository.
 - Target regresi: skor `quality` asli 3–9 (mean 5,796; std 0,880)
 
 File CSV memakai pemisah `;`.
-
-### 2. Imagenette 160px (tidak disertakan)
-
-Arsip berukuran ± 94 MB sehingga tidak dimasukkan ke repositori. Unduh lalu ekstrak secara manual:
-
-```bash
-# dari root repositori
-mkdir -p data/raw
-wget https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-160.tgz -O data/raw/imagenette2-160.tgz
-tar -xzf data/raw/imagenette2-160.tgz -C data/raw/
-```
-
-Struktur yang diharapkan: `data/raw/imagenette2-160/train/` dan `data/raw/imagenette2-160/val/`, masing-masing berisi 10 folder kelas.
-
----
 
 ## Instalasi
 
@@ -207,38 +163,6 @@ Analisis lengkap ada di [`reports/bagian_dt_regresi.md`](reports/bagian_dt_regre
 6. Regresi dioptimalkan dengan skor `neg_root_mean_squared_error` (utama) dan `neg_mean_absolute_error` (pembanding).
 7. Evaluasi klasifikasi memakai accuracy, balanced accuracy, precision, recall, F1, F1 macro, ROC-AUC, PR-AUC, dan confusion matrix.
 8. Evaluasi regresi memakai MAE, MSE, RMSE, R², median AE, MAPE, toleransi ±1 poin, dan akurasi ambang `quality ≥ 6`.
-
----
-
-## Artefak hasil
-
-| Lokasi | Isi |
-|---|---|
-| `results/figures/dt_*.png` | klasifikasi: distribusi kelas, pohon depth 2 dan 3, kurva `max_depth`, confusion matrix, ROC/PR, feature importance, learning curve |
-| `results/figures/dtr_*.png` | regresi: distribusi quality, prediksi vs aktual, residual, distribusi prediksi, kurva `max_depth`, feature importance, learning curve, pohon depth 2 dan 3 |
-| `results/figures/dtr_manual_tree.png` | pohon hasil simulasi manual regresi |
-| `results/metrics/dt_metrics.json` | metrik klasifikasi dan parameter terbaik |
-| `results/metrics/dtr_metrics.json` | metrik regresi, kedua objective, dan parameter terbaik |
-| `results/metrics/dt_grid_top10.csv` | 10 konfigurasi terbaik GridSearch klasifikasi |
-| `results/metrics/dtr_grid_top10.csv` | 10 konfigurasi terbaik GridSearch regresi (RMSE) |
-| `results/metrics/dtr_grid_top10_mae.csv` | 10 konfigurasi terbaik GridSearch regresi (MAE) |
-| `results/metrics/dt_rules_full.txt` | seluruh aturan pohon klasifikasi |
-| `results/metrics/dtr_rules_full.txt` | seluruh aturan pohon regresi |
-| `results/models/decision_tree_best.joblib` | model klasifikasi terbaik |
-| `results/models/decision_tree_regresi_best.joblib` | model regresi terbaik |
-| `results/data/simulasi_dt_8baris.csv` | data simulasi manual klasifikasi |
-| `results/data/simulasi_dtr_8baris.csv` | data simulasi manual regresi |
-
----
-
-## Tim
-
-| Nama | NIM | Bagian |
-|---|---|---|
-| _(isi nama)_ | _(isi NIM)_ | Decision Tree |
-| _(isi nama)_ | _(isi NIM)_ | Agglomerative Clustering |
-| _(isi nama)_ | _(isi NIM)_ | ResNet18 |
-| _(isi nama)_ | _(isi NIM)_ | Integrasi laporan |
 
 ---
 
