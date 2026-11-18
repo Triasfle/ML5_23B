@@ -1,0 +1,151 @@
+|--- alcohol <= 10.9167
+|   |--- volatile acidity <= 0.2525
+|   |   |--- alcohol <= 10.1167
+|   |   |   |--- volatile acidity <= 0.2250
+|   |   |   |   |--- free sulfur dioxide <= 26.5000
+|   |   |   |   |   |--- residual sugar <= 2.4500
+|   |   |   |   |   |   |--- value: [5.3220]
+|   |   |   |   |   |--- residual sugar >  2.4500
+|   |   |   |   |   |   |--- value: [5.8269]
+|   |   |   |   |--- free sulfur dioxide >  26.5000
+|   |   |   |   |   |--- fixed acidity <= 6.4500
+|   |   |   |   |   |   |--- value: [5.5690]
+|   |   |   |   |   |--- fixed acidity >  6.4500
+|   |   |   |   |   |   |--- sulphates <= 0.4350
+|   |   |   |   |   |   |   |--- value: [5.8333]
+|   |   |   |   |   |   |--- sulphates >  0.4350
+|   |   |   |   |   |   |   |--- value: [6.1429]
+|   |   |   |--- volatile acidity >  0.2250
+|   |   |   |   |--- alcohol <= 9.5667
+|   |   |   |   |   |--- pH <= 3.1250
+|   |   |   |   |   |   |--- value: [5.5789]
+|   |   |   |   |   |--- pH >  3.1250
+|   |   |   |   |   |   |--- value: [5.3000]
+|   |   |   |   |--- alcohol >  9.5667
+|   |   |   |   |   |--- value: [5.6548]
+|   |   |--- alcohol >  10.1167
+|   |   |   |--- pH <= 3.2250
+|   |   |   |   |--- free sulfur dioxide <= 24.5000
+|   |   |   |   |   |--- value: [5.6129]
+|   |   |   |   |--- free sulfur dioxide >  24.5000
+|   |   |   |   |   |--- pH <= 3.1350
+|   |   |   |   |   |   |--- value: [6.2319]
+|   |   |   |   |   |--- pH >  3.1350
+|   |   |   |   |   |   |--- value: [5.7887]
+|   |   |   |--- pH >  3.2250
+|   |   |   |   |--- total sulfur dioxide <= 114.5000
+|   |   |   |   |   |--- value: [6.4062]
+|   |   |   |   |--- total sulfur dioxide >  114.5000
+|   |   |   |   |   |--- sulphates <= 0.5250
+|   |   |   |   |   |   |--- value: [5.9344]
+|   |   |   |   |   |--- sulphates >  0.5250
+|   |   |   |   |   |   |--- value: [6.1698]
+|   |--- volatile acidity >  0.2525
+|   |   |--- alcohol <= 9.9750
+|   |   |   |--- volatile acidity <= 0.4225
+|   |   |   |   |--- citric acid <= 0.2350
+|   |   |   |   |   |--- volatile acidity <= 0.3450
+|   |   |   |   |   |   |--- value: [5.0476]
+|   |   |   |   |   |--- volatile acidity >  0.3450
+|   |   |   |   |   |   |--- value: [5.2807]
+|   |   |   |   |--- citric acid >  0.2350
+|   |   |   |   |   |--- sulphates <= 0.5650
+|   |   |   |   |   |   |--- free sulfur dioxide <= 17.5000
+|   |   |   |   |   |   |   |--- value: [5.0400]
+|   |   |   |   |   |   |--- free sulfur dioxide >  17.5000
+|   |   |   |   |   |   |   |--- value: [5.3678]
+|   |   |   |   |   |--- sulphates >  0.5650
+|   |   |   |   |   |   |--- alcohol <= 9.5500
+|   |   |   |   |   |   |   |--- value: [5.4396]
+|   |   |   |   |   |   |--- alcohol >  9.5500
+|   |   |   |   |   |   |   |--- value: [5.7091]
+|   |   |   |--- volatile acidity >  0.4225
+|   |   |   |   |--- residual sugar <= 1.6500
+|   |   |   |   |   |--- value: [4.7143]
+|   |   |   |   |--- residual sugar >  1.6500
+|   |   |   |   |   |--- sulphates <= 0.5350
+|   |   |   |   |   |   |--- pH <= 3.2050
+|   |   |   |   |   |   |   |--- value: [5.1356]
+|   |   |   |   |   |   |--- pH >  3.2050
+|   |   |   |   |   |   |   |--- value: [4.9277]
+|   |   |   |   |   |--- sulphates >  0.5350
+|   |   |   |   |   |   |--- total sulfur dioxide <= 38.5000
+|   |   |   |   |   |   |   |--- value: [5.4737]
+|   |   |   |   |   |   |--- total sulfur dioxide >  38.5000
+|   |   |   |   |   |   |   |--- value: [5.1593]
+|   |   |--- alcohol >  9.9750
+|   |   |   |--- sulphates <= 0.7250
+|   |   |   |   |--- free sulfur dioxide <= 10.5000
+|   |   |   |   |   |--- density <= 0.9960
+|   |   |   |   |   |   |--- value: [4.9057]
+|   |   |   |   |   |--- density >  0.9960
+|   |   |   |   |   |   |--- value: [5.3667]
+|   |   |   |   |--- free sulfur dioxide >  10.5000
+|   |   |   |   |   |--- pH <= 3.3150
+|   |   |   |   |   |   |--- residual sugar <= 1.4500
+|   |   |   |   |   |   |   |--- value: [5.1786]
+|   |   |   |   |   |   |--- residual sugar >  1.4500
+|   |   |   |   |   |   |   |--- value: [5.5551]
+|   |   |   |   |   |--- pH >  3.3150
+|   |   |   |   |   |   |--- alcohol <= 10.4833
+|   |   |   |   |   |   |   |--- value: [5.5567]
+|   |   |   |   |   |   |--- alcohol >  10.4833
+|   |   |   |   |   |   |   |--- value: [6.0000]
+|   |   |   |--- sulphates >  0.7250
+|   |   |   |   |--- value: [6.0441]
+|--- alcohol >  10.9167
+|   |--- alcohol <= 12.0833
+|   |   |--- citric acid <= 0.2450
+|   |   |   |--- free sulfur dioxide <= 15.5000
+|   |   |   |   |--- value: [5.2364]
+|   |   |   |--- free sulfur dioxide >  15.5000
+|   |   |   |   |--- value: [5.8652]
+|   |   |--- citric acid >  0.2450
+|   |   |   |--- free sulfur dioxide <= 11.5000
+|   |   |   |   |--- sulphates <= 0.6250
+|   |   |   |   |   |--- value: [5.4643]
+|   |   |   |   |--- sulphates >  0.6250
+|   |   |   |   |   |--- value: [6.3393]
+|   |   |   |--- free sulfur dioxide >  11.5000
+|   |   |   |   |--- pH <= 3.2450
+|   |   |   |   |   |--- total sulfur dioxide <= 160.5000
+|   |   |   |   |   |   |--- density <= 0.9932
+|   |   |   |   |   |   |   |--- value: [6.1429]
+|   |   |   |   |   |   |--- density >  0.9932
+|   |   |   |   |   |   |   |--- value: [6.3976]
+|   |   |   |   |   |--- total sulfur dioxide >  160.5000
+|   |   |   |   |   |   |--- value: [5.7692]
+|   |   |   |   |--- pH >  3.2450
+|   |   |   |   |   |--- chlorides <= 0.0485
+|   |   |   |   |   |   |--- residual sugar <= 1.5250
+|   |   |   |   |   |   |   |--- value: [6.3519]
+|   |   |   |   |   |   |--- residual sugar >  1.5250
+|   |   |   |   |   |   |   |--- value: [6.6195]
+|   |   |   |   |   |--- chlorides >  0.0485
+|   |   |   |   |   |   |--- value: [6.0323]
+|   |--- alcohol >  12.0833
+|   |   |--- free sulfur dioxide <= 21.5000
+|   |   |   |--- sulphates <= 0.6800
+|   |   |   |   |--- density <= 0.9903
+|   |   |   |   |   |--- value: [6.3833]
+|   |   |   |   |--- density >  0.9903
+|   |   |   |   |   |--- value: [5.9388]
+|   |   |   |--- sulphates >  0.6800
+|   |   |   |   |--- value: [6.7451]
+|   |   |--- free sulfur dioxide >  21.5000
+|   |   |   |--- sulphates <= 0.4750
+|   |   |   |   |--- total sulfur dioxide <= 111.5000
+|   |   |   |   |   |--- chlorides <= 0.0325
+|   |   |   |   |   |   |--- value: [6.5098]
+|   |   |   |   |   |--- chlorides >  0.0325
+|   |   |   |   |   |   |--- value: [6.3000]
+|   |   |   |   |--- total sulfur dioxide >  111.5000
+|   |   |   |   |   |--- residual sugar <= 3.6500
+|   |   |   |   |   |   |--- value: [6.6212]
+|   |   |   |   |   |--- residual sugar >  3.6500
+|   |   |   |   |   |   |--- value: [6.9206]
+|   |   |   |--- sulphates >  0.4750
+|   |   |   |   |--- density <= 0.9911
+|   |   |   |   |   |--- value: [7.0326]
+|   |   |   |   |--- density >  0.9911
+|   |   |   |   |   |--- value: [6.6912]

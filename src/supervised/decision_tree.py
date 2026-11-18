@@ -1,23 +1,3 @@
-"""
-Implementasi lengkap Decision Tree untuk dataset Wine Quality.
-
-Alur:
-1. Muat red + white, gabungkan, buang duplikat.
-2. Target biner: quality >= 6 -> 1 (baik), lainnya 0 (buruk).
-3. Split 80/20 stratified (random_state=42).
-4. Baseline: DummyClassifier (kelas mayoritas) dan DecisionTree default.
-5. Tuning: GridSearchCV 5-fold (criterion, max_depth, min_samples_leaf,
-   ccp_alpha, class_weight) dengan skor f1_macro.
-6. Evaluasi test: accuracy, balanced accuracy, precision, recall, F1,
-   ROC-AUC, PR-AUC, confusion matrix.
-7. Visualisasi: distribusi kelas, pohon depth 3, kurva max_depth,
-   confusion matrix, ROC/PR, feature importance, learning curve.
-8. Simpan model, metrik, dan tabel aturan.
-
-Jalankan:
-    python3 src/supervised/decision_tree.py
-"""
-
 from __future__ import annotations
 
 import json
@@ -60,9 +40,9 @@ from sklearn.tree import DecisionTreeClassifier, export_text, plot_tree
 # Konfigurasi
 ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = ROOT / "data" / "raw"
-FIG_DIR = ROOT / "results" / "figures"
-METRIC_DIR = ROOT / "results" / "metrics"
-MODEL_DIR = ROOT / "results" / "models"
+FIG_DIR = ROOT / "results" / "figures" / "classification"
+METRIC_DIR = ROOT / "results" / "metrics" / "classification"
+MODEL_DIR = ROOT / "results" / "models" / "classification"
 
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
@@ -366,7 +346,7 @@ def plot_learning_curve(best_model, X_train, y_train, cv) -> dict:
 
 
 def plot_tree_figure(best_model) -> None:
-    """Dua versi: depth 2 (mudah dibaca di badan laporan) dan depth 3 (sesuai tugas)."""
+    """Dua versi: depth 2 dan depth 3."""
     for max_depth, filename, figsize, fontsize in [
         (2, "dt_tree_depth2.png", (16, 8), 11),
         (3, "dt_tree_depth3.png", (26, 12), 9),
@@ -384,7 +364,7 @@ def plot_tree_figure(best_model) -> None:
             fontsize=fontsize,
             ax=ax,
         )
-        # label cabang bawaan sklearn ("True"/"False") diterjemahkan
+    
         for text in ax.texts:
             label = text.get_text().strip()
             if label == "True":
@@ -393,7 +373,7 @@ def plot_tree_figure(best_model) -> None:
                 text.set_text("tidak")
 
         ax.set_title(
-            f"Decision Tree terbaik (ditampilkan sampai kedalaman {max_depth})",
+            f"Decision Tree terbaik (max_depth {max_depth})",
             pad=14,
         )
         fig.tight_layout()
@@ -419,14 +399,14 @@ def main() -> None:
 
     cv = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=RANDOM_STATE)
 
-    # ---------------------------------------------------------------- baseline
+    # baseline
     dummy = DummyClassifier(strategy="most_frequent", random_state=RANDOM_STATE)
     dummy.fit(X_train, y_train)
 
     default_tree = DecisionTreeClassifier(random_state=RANDOM_STATE)
     default_tree.fit(X_train, y_train)
 
-    # ---------------------------------------------------------------- tuning
+    # tuning
     param_grid = {
         "criterion": ["gini", "entropy"],
         "max_depth": list(range(2, 13)),
@@ -452,9 +432,9 @@ def main() -> None:
     print(f"Selesai dalam {time.time() - start:.1f} detik")
     print(f"Parameter terbaik: {grid.best_params_}")
     print(f"CV f1_macro terbaik: {grid.best_score_:.4f}")
-    print(f"Kedalaman pohon terbaik: {best_depth}, jumlah leaf: {best_model.get_n_leaves()}")
+    print(f"max_depth pohon terbaik: {best_depth}, jumlah leaf: {best_model.get_n_leaves()}")
 
-    # ---------------------------------------------------------------- evaluasi
+    # evaluasi
     results = {
         "dummy": evaluate_model("DummyClassifier (mayoritas)", dummy, X_test, y_test),
         "default_tree": evaluate_model("DecisionTree default (tanpa tuning)",
@@ -476,7 +456,7 @@ def main() -> None:
     )
     print(report_text)
 
-    # ---------------------------------------------------------------- figur
+    # figur
     print("\nMembuat visualisasi ...")
     depth_curve = plot_depth_curve(best_model, X_train, y_train, X_test, y_test,
                                    cv, best_depth)
@@ -486,14 +466,13 @@ def main() -> None:
     learning = plot_learning_curve(best_model, X_train, y_train, cv)
     plot_tree_figure(best_model)
 
-    # aturan pohon (kedalaman 3) + tabel aturan penuh
     rules_depth3 = export_text(best_model, feature_names=FEATURES,
                                max_depth=3, decimals=2)
     rules_full = export_text(best_model, feature_names=FEATURES, decimals=2)
     (METRIC_DIR / "dt_rules_depth3.txt").write_text(rules_depth3, encoding="utf-8")
     (METRIC_DIR / "dt_rules_full.txt").write_text(rules_full, encoding="utf-8")
 
-    # ---------------------------------------------------------------- simpan
+    # simpan
     joblib.dump(best_model, MODEL_DIR / "decision_tree_best.joblib")
 
     grid_top = pd.DataFrame(grid.cv_results_).sort_values("rank_test_score").head(10)

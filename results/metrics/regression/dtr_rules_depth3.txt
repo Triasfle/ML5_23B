@@ -1,0 +1,46 @@
+|--- alcohol <= 10.9167
+|   |--- volatile acidity <= 0.2525
+|   |   |--- alcohol <= 10.1167
+|   |   |   |--- volatile acidity <= 0.2250
+|   |   |   |   |--- truncated branch of depth 4
+|   |   |   |--- volatile acidity >  0.2250
+|   |   |   |   |--- truncated branch of depth 3
+|   |   |--- alcohol >  10.1167
+|   |   |   |--- pH <= 3.2250
+|   |   |   |   |--- truncated branch of depth 3
+|   |   |   |--- pH >  3.2250
+|   |   |   |   |--- truncated branch of depth 3
+|   |--- volatile acidity >  0.2525
+|   |   |--- alcohol <= 9.9750
+|   |   |   |--- volatile acidity <= 0.4225
+|   |   |   |   |--- truncated branch of depth 4
+|   |   |   |--- volatile acidity >  0.4225
+|   |   |   |   |--- truncated branch of depth 4
+|   |   |--- alcohol >  9.9750
+|   |   |   |--- sulphates <= 0.7250
+|   |   |   |   |--- truncated branch of depth 4
+|   |   |   |--- sulphates >  0.7250
+|   |   |   |   |--- value: [6.0441]
+|--- alcohol >  10.9167
+|   |--- alcohol <= 12.0833
+|   |   |--- citric acid <= 0.2450
+|   |   |   |--- free sulfur dioxide <= 15.5000
+|   |   |   |   |--- value: [5.2364]
+|   |   |   |--- free sulfur dioxide >  15.5000
+|   |   |   |   |--- value: [5.8652]
+|   |   |--- citric acid >  0.2450
+|   |   |   |--- free sulfur dioxide <= 11.5000
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- free sulfur dioxide >  11.5000
+|   |   |   |   |--- truncated branch of depth 4
+|   |--- alcohol >  12.0833
+|   |   |--- free sulfur dioxide <= 21.5000
+|   |   |   |--- sulphates <= 0.6800
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- sulphates >  0.6800
+|   |   |   |   |--- value: [6.7451]
+|   |   |--- free sulfur dioxide >  21.5000
+|   |   |   |--- sulphates <= 0.4750
+|   |   |   |   |--- truncated branch of depth 3
+|   |   |   |--- sulphates >  0.4750
+|   |   |   |   |--- truncated branch of depth 2
