@@ -68,22 +68,6 @@
       "residual_mean": 0.028665413533834973,
       "residual_std": 0.8671053854014965
     },
-    "linear_regression": {
-      "mae": 0.5611249218572957,
-      "mse": 0.5247184610073188,
-      "rmse": 0.724374530893597,
-      "r2": 0.3021170679288885,
-      "medae": 0.4570201497353139,
-      "mape": 10.0270924089523,
-      "max_error": 3.2606473530980935,
-      "within_1": 0.8627819548872181,
-      "mae_rounded": 0.5018796992481203,
-      "rmse_rounded": 0.7755667343294813,
-      "r2_rounded": 0.1999915412639468,
-      "accuracy_threshold": 0.6475563909774437,
-      "residual_mean": 0.031196995484569355,
-      "residual_std": 0.7237024308927354
-    },
     "default_tree": {
       "mae": 0.6625939849624061,
       "mse": 0.8900375939849624,
@@ -314,5 +298,5 @@
     ]
   },
   "rules_depth3": "|--- alcohol <= 10.9167\n|   |--- volatile acidity <= 0.2525\n|   |   |--- alcohol <= 10.1167\n|   |   |   |--- volatile acidity <= 0.2250\n|   |   |   |   |--- truncated branch of depth 4\n|   |   |   |--- volatile acidity >  0.2250\n|   |   |   |   |--- truncated branch of depth 3\n|   |   |--- alcohol >  10.1167\n|   |   |   |--- pH <= 3.2250\n|   |   |   |   |--- truncated branch of depth 3\n|   |   |   |--- pH >  3.2250\n|   |   |   |   |--- truncated branch of depth 3\n|   |--- volatile acidity >  0.2525\n|   |   |--- alcohol <= 9.9750\n|   |   |   |--- volatile acidity <= 0.4225\n|   |   |   |   |--- truncated branch of depth 4\n|   |   |   |--- volatile acidity >  0.4225\n|   |   |   |   |--- truncated branch of depth 4\n|   |   |--- alcohol >  9.9750\n|   |   |   |--- sulphates <= 0.7250\n|   |   |   |   |--- truncated branch of depth 4\n|   |   |   |--- sulphates >  0.7250\n|   |   |   |   |--- value: [6.0441]\n|--- alcohol >  10.9167\n|   |--- alcohol <= 12.0833\n|   |   |--- citric acid <= 0.2450\n|   |   |   |--- free sulfur dioxide <= 15.5000\n|   |   |   |   |--- value: [5.2364]\n|   |   |   |--- free sulfur dioxide >  15.5000\n|   |   |   |   |--- value: [5.8652]\n|   |   |--- citric acid >  0.2450\n|   |   |   |--- free sulfur dioxide <= 11.5000\n|   |   |   |   |--- truncated branch of depth 2\n|   |   |   |--- free sulfur dioxide >  11.5000\n|   |   |   |   |--- truncated branch of depth 4\n|   |--- alcohol >  12.0833\n|   |   |--- free sulfur dioxide <= 21.5000\n|   |   |   |--- sulphates <= 0.6800\n|   |   |   |   |--- truncated branch of depth 2\n|   |   |   |--- sulphates >  0.6800\n|   |   |   |   |--- value: [6.7451]\n|   |   |--- free sulfur dioxide >  21.5000\n|   |   |   |--- sulphates <= 0.4750\n|   |   |   |   |--- truncated branch of depth 3\n|   |   |   |--- sulphates >  0.4750\n|   |   |   |   |--- truncated branch of depth 2\n",
-  "runtime_seconds": 36.63327932357788
+  "runtime_seconds": 50.32178854942322
 }

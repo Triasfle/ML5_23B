@@ -14,7 +14,6 @@ import pandas as pd
 from sklearn.base import clone
 from sklearn.dummy import DummyRegressor
 from sklearn.inspection import permutation_importance
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import (
     accuracy_score,
     mean_absolute_error,
@@ -412,9 +411,6 @@ def main() -> None:
     dummy = DummyRegressor(strategy="mean")
     dummy.fit(X_train, y_train)
 
-    linear = LinearRegression()
-    linear.fit(X_train, y_train)
-
     default_tree = DecisionTreeRegressor(random_state=RANDOM_STATE)
     default_tree.fit(X_train, y_train)
 
@@ -469,7 +465,6 @@ def main() -> None:
     # evaluasi
     model_results = {
         "dummy_mean": evaluate_model("Dummy (rata-rata)", dummy, X_test, y_test),
-        "linear_regression": evaluate_model("Linear Regression", linear, X_test, y_test),
         "default_tree": evaluate_model("Decision Tree default", default_tree, X_test, y_test),
         "tuned_tree": evaluate_model("Decision Tree tuned (RMSE)", best_model, X_test, y_test),
         "tuned_tree_mae": evaluate_model("Decision Tree tuned (MAE)",
